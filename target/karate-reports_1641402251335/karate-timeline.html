@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/karate\/framework\/sampletest[1:8]","start":1641402209226,"end":1641402210348,"title":"src\/test\/java\/karate\/framework\/sampletest[1:8] 22:33:29.226-22:33:30.348 Getting Student records using Get method"},{"id":2,"group":1,"content":"src\/test\/java\/karate\/framework\/sampletest[2:15]","start":1641402210355,"end":1641402210459,"title":"src\/test\/java\/karate\/framework\/sampletest[2:15] 22:33:30.355-22:33:30.459 Creating Student Record using POST method"},{"id":3,"group":1,"content":"src\/test\/java\/karate\/framework\/sampletest[3.1:31]","start":1641402210472,"end":-1,"title":"src\/test\/java\/karate\/framework\/sampletest[3.1:31] 22:33:30.472-05:29:59.999 Creating Students by fetching data from csv","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

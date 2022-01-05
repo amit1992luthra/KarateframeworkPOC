@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/karate\/framework\/sampletest[1:8]","start":1641403840938,"end":1641403841983,"title":"src\/test\/java\/karate\/framework\/sampletest[1:8] 23:00:40.938-23:00:41.983 Getting Student records using Get method","className":"failed"},{"id":2,"group":1,"content":"src\/test\/java\/karate\/framework\/sampletest[2:15]","start":1641403841989,"end":1641403842076,"title":"src\/test\/java\/karate\/framework\/sampletest[2:15] 23:00:41.989-23:00:42.076 Creating Student Record using POST method"},{"id":3,"group":1,"content":"src\/test\/java\/karate\/framework\/sampletest[3.1:31]","start":1641403842197,"end":1641403842243,"title":"src\/test\/java\/karate\/framework\/sampletest[3.1:31] 23:00:42.197-23:00:42.243 Creating Students by fetching data from csv"},{"id":4,"group":1,"content":"src\/test\/java\/karate\/framework\/sampletest[3.2:31]","start":1641403842248,"end":1641403842290,"title":"src\/test\/java\/karate\/framework\/sampletest[3.2:31] 23:00:42.248-23:00:42.290 Creating Students by fetching data from csv"},{"id":5,"group":1,"content":"src\/test\/java\/karate\/framework\/sampletest[3.3:31]","start":1641403842295,"end":1641403842335,"title":"src\/test\/java\/karate\/framework\/sampletest[3.3:31] 23:00:42.295-23:00:42.335 Creating Students by fetching data from csv"},{"id":6,"group":1,"content":"src\/test\/java\/karate\/framework\/sampletest[4.1:43]","start":1641403842342,"end":1641403842383,"title":"src\/test\/java\/karate\/framework\/sampletest[4.1:43] 23:00:42.342-23:00:42.383 Modifying Student Record using PUT method","className":"failed"},{"id":7,"group":1,"content":"src\/test\/java\/karate\/framework\/sampletest[4.2:44]","start":1641403842388,"end":1641403842427,"title":"src\/test\/java\/karate\/framework\/sampletest[4.2:44] 23:00:42.388-23:00:42.427 Modifying Student Record using PUT method","className":"failed"},{"id":8,"group":1,"content":"src\/test\/java\/karate\/framework\/sampletest[4.3:45]","start":1641403842432,"end":1641403842459,"title":"src\/test\/java\/karate\/framework\/sampletest[4.3:45] 23:00:42.432-23:00:42.459 Modifying Student Record using PUT method","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
